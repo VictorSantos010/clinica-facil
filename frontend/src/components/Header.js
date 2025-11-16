@@ -5,9 +5,13 @@ const Header = ({ activeView, setActiveView }) => {
   return (
     <header className="header">
       <div className="header-content">
-        <h1 className="logo" onClick={() => setActiveView('dashboard')}>
-          🏥 ClínicaFácil
-        </h1>
+        <div className="logo-container" onClick={() => setActiveView('dashboard')}>
+          <div className="logo-icon">🏥</div>
+          <div className="logo-text">
+            <span className="logo-main">Clínica</span>
+            <span className="logo-sub">Fácil</span>
+          </div>
+        </div>
         <nav className="nav">
           <button
             className={activeView === 'dashboard' ? 'nav-btn active' : 'nav-btn'}
