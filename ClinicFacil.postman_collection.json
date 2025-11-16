@@ -1,0 +1,457 @@
+{
+	"info": {
+		"_postman_id": "clinicafacil-2025",
+		"name": "ClínicaFácil API",
+		"description": "Coleção completa de endpoints da API ClínicaFácil",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Pacientes",
+			"item": [
+				{
+					"name": "Criar Paciente",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"João Silva\",\n  \"cpf\": \"12345678901\",\n  \"email\": \"joao.silva@email.com\",\n  \"telefone\": \"11987654321\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/pacientes",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"pacientes"
+							]
+						},
+						"description": "Cadastra um novo paciente no sistema"
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Todos os Pacientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/pacientes",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"pacientes"
+							]
+						},
+						"description": "Retorna lista de todos os pacientes cadastrados"
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Paciente por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/pacientes/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"pacientes",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Busca um paciente específico pelo ID"
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoints para gerenciamento de pacientes"
+		},
+		{
+			"name": "Médicos",
+			"item": [
+				{
+					"name": "Criar Médico",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Dr. Carlos Mendes\",\n  \"crm\": \"CRM123456\",\n  \"especialidade\": \"Cardiologia\",\n  \"horarioInicio\": \"08:00:00\",\n  \"horarioFim\": \"18:00:00\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/medicos",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"medicos"
+							]
+						},
+						"description": "Cadastra um novo médico no sistema"
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Todos os Médicos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/medicos",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"medicos"
+							]
+						},
+						"description": "Retorna lista de todos os médicos cadastrados"
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Médico por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/medicos/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"medicos",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Busca um médico específico pelo ID"
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoints para gerenciamento de médicos"
+		},
+		{
+			"name": "Serviços de Exame",
+			"item": [
+				{
+					"name": "Criar Serviço de Exame",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Raio-X Tórax\",\n  \"nomeExame\": \"Radiografia de Tórax\",\n  \"sala\": \"Sala 101\",\n  \"equipamento\": \"Aparelho de Raio-X Digital\",\n  \"horarioInicio\": \"08:00:00\",\n  \"horarioFim\": \"17:00:00\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/exames",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"exames"
+							]
+						},
+						"description": "Cadastra um novo serviço de exame no sistema"
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Todos os Serviços de Exame",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/exames",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"exames"
+							]
+						},
+						"description": "Retorna lista de todos os serviços de exame cadastrados"
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Serviço de Exame por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/exames/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"exames",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Busca um serviço de exame específico pelo ID"
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoints para gerenciamento de serviços de exame"
+		},
+		{
+			"name": "Agendáveis",
+			"item": [
+				{
+					"name": "Listar Todos os Agendáveis",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/agendaveis",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"agendaveis"
+							]
+						},
+						"description": "Retorna lista com todos os itens agendáveis (médicos e exames misturados)"
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar Horários Disponíveis",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/agendaveis/:id/agenda?dia=2025-11-20",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"agendaveis",
+								":id",
+								"agenda"
+							],
+							"query": [
+								{
+									"key": "dia",
+									"value": "2025-11-20",
+									"description": "Data no formato YYYY-MM-DD"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Retorna os horários disponíveis para um item agendável em um dia específico"
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoints para consulta de itens agendáveis e horários disponíveis"
+		},
+		{
+			"name": "Agendamentos",
+			"item": [
+				{
+					"name": "Criar Agendamento",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"idPaciente\": 1,\n  \"idAgendavel\": 1,\n  \"dataHora\": \"2025-11-20T10:30:00\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/agendamentos",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"agendamentos"
+							]
+						},
+						"description": "Cria um novo agendamento. Valida se o horário está disponível e dentro do período de trabalho."
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Todos os Agendamentos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/agendamentos",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"agendamentos"
+							]
+						},
+						"description": "Retorna lista de todos os agendamentos criados"
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoints para gerenciamento de agendamentos"
+		},
+		{
+			"name": "Testes de Validação",
+			"item": [
+				{
+					"name": "Teste - CPF Duplicado",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Outro Paciente\",\n  \"cpf\": \"12345678901\",\n  \"email\": \"outro@email.com\",\n  \"telefone\": \"11999999999\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/pacientes",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"pacientes"
+							]
+						},
+						"description": "Testa validação de CPF duplicado (deve falhar)"
+					},
+					"response": []
+				},
+				{
+					"name": "Teste - Horário Fora do Período",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"idPaciente\": 1,\n  \"idAgendavel\": 1,\n  \"dataHora\": \"2025-11-20T07:00:00\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/agendamentos",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"agendamentos"
+							]
+						},
+						"description": "Testa validação de horário fora do período de trabalho (deve falhar)"
+					},
+					"response": []
+				},
+				{
+					"name": "Teste - Horário Já Ocupado",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"idPaciente\": 1,\n  \"idAgendavel\": 1,\n  \"dataHora\": \"2025-11-20T10:30:00\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/agendamentos",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"agendamentos"
+							]
+						},
+						"description": "Testa validação de horário já ocupado (deve falhar após criar primeiro agendamento)"
+					},
+					"response": []
+				}
+			],
+			"description": "Testes para validar regras de negócio"
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
+
