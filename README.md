@@ -11,6 +11,7 @@ Victor Santos
 
 ## 🛠️ Tecnologias Utilizadas
 
+### Backend
 - **Java 17+**
 - **Spring Boot 3.5.7**
   - Spring Web (REST API)
@@ -19,6 +20,11 @@ Victor Santos
 - **H2 Database** (banco de dados em memória)
 - **Lombok** (redução de boilerplate)
 - **Maven** (gerenciamento de dependências)
+
+### Frontend
+- **React 18** - Interface web moderna e responsiva
+- **Axios** - Cliente HTTP
+- **CSS3** - Estilização moderna
 
 ## 📦 Como Compilar e Executar
 
@@ -52,6 +58,29 @@ mvnw.cmd spring-boot:run
 ```
 
 O servidor será iniciado em `http://localhost:8080`
+
+### Executar Frontend (Opcional)
+
+O projeto inclui um frontend completo em React. Para executá-lo:
+
+1. **Navegue até a pasta do frontend:**
+   ```bash
+   cd frontend
+   ```
+
+2. **Instale as dependências:**
+   ```bash
+   npm install
+   ```
+
+3. **Inicie o frontend:**
+   ```bash
+   npm start
+   ```
+
+O frontend será aberto automaticamente em `http://localhost:3000`
+
+**Nota:** Certifique-se de que o backend está rodando antes de iniciar o frontend.
 
 ### Acesso ao Console H2
 
