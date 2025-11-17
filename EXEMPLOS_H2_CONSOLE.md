@@ -2,7 +2,7 @@
 
 ## Configuração de Conexão
 
-**JDBC URL:** `jdbc:h2:mem:clinicafacil`
+**JDBC URL:** `jdbc:h2:file:./data/clinicafacil`
 **User Name:** `sa`
 **Password:** (deixe em branco)
 **Driver Class:** `org.h2.Driver`
@@ -53,8 +53,9 @@ SELECT COUNT(*) AS total_agendamentos FROM agendamentos;
 
 ## Importante
 
-⚠️ **ATENÇÃO:** Este é um banco em memória (`mem:clinicafacil`). 
-- Os dados são perdidos quando você reinicia o backend
+⚠️ **ATENÇÃO:** Este é um banco em arquivo (`file:./data/clinicafacil`). 
+- Os dados são persistidos no diretório `./data/`
+- Os dados são mantidos mesmo após reiniciar o backend
 - É ideal para desenvolvimento e testes
 - Para produção, use PostgreSQL ou MySQL
 
