@@ -1,5 +1,14 @@
 .list-container {
   animation: fadeIn 0.5s;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.list-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
 }
 
 .list-title {
@@ -95,6 +104,16 @@
   margin: 0.75rem 0;
   line-height: 1.8;
   font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card-body p::before {
+  content: '•';
+  color: #667eea;
+  font-weight: 900;
+  font-size: 1.2rem;
 }
 
 .card-body strong {
@@ -163,7 +182,237 @@
   box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
 }
 
+.message.info {
+  background: linear-gradient(135deg, #d1ecf1 0%, #bee5eb 100%);
+  color: #0c5460;
+  border: 2px solid #abdde5;
+}
+
+/* Estilos específicos para cards de pacientes */
+.paciente-cards {
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.paciente-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+  border-radius: 20px;
+  padding: 0;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15);
+  border: 2px solid rgba(102, 126, 234, 0.1);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.paciente-card::before {
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  transform: scaleX(0);
+  transition: transform 0.4s;
+}
+
+.paciente-card:hover::before {
+  transform: scaleX(1);
+}
+
+.paciente-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(102, 126, 234, 0.25);
+  border-color: rgba(102, 126, 234, 0.3);
+}
+
+.paciente-card-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2rem 2rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  color: white;
+}
+
+.paciente-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.paciente-avatar-icon {
+  font-size: 2.5rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.paciente-header-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.paciente-nome {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.paciente-id {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  color: white;
+  padding: 0.35rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.paciente-card-body {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.paciente-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f8f9ff;
+  border-radius: 12px;
+  border: 1px solid rgba(102, 126, 234, 0.1);
+  transition: all 0.3s ease;
+}
+
+.paciente-info-item:hover {
+  background: #f0f2ff;
+  border-color: rgba(102, 126, 234, 0.2);
+  transform: translateX(5px);
+}
+
+.paciente-info-icon {
+  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 10px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.paciente-info-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-width: 0;
+}
+
+.paciente-info-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #667eea;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.paciente-info-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  word-break: break-word;
+  line-height: 1.4;
+}
+
 @media (max-width: 768px) {
+  .paciente-cards {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .paciente-card-header {
+    padding: 1.5rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .paciente-header-info {
+    width: 100%;
+  }
+
+  .paciente-nome {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+  }
+
+  .paciente-card-body {
+    padding: 1.5rem;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.list-container p {
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.card {
+  animation: fadeIn 0.5s ease-out;
+  animation-fill-mode: both;
+}
+
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(4) { animation-delay: 0.4s; }
+.card:nth-child(5) { animation-delay: 0.5s; }
+.card:nth-child(6) { animation-delay: 0.6s; }
+
+@media (max-width: 768px) {
+  .list-container {
+    padding: 1rem;
+  }
+
   .list-title {
     font-size: 2rem;
   }

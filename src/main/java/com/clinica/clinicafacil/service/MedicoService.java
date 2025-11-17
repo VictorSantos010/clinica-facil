@@ -1,5 +1,6 @@
 package com.clinica.clinicafacil.service;
 
+import com.clinica.clinicafacil.exception.EntidadeNaoEncontradaException;
 import com.clinica.clinicafacil.model.Medico;
 import com.clinica.clinicafacil.repository.MedicoRepository;
 import lombok.RequiredArgsConstructor;
@@ -16,6 +17,9 @@ public class MedicoService {
 
     @Transactional
     public Medico criar(Medico medico) {
+        if (medico == null) {
+            throw new IllegalArgumentException("Médico não pode ser nulo");
+        }
         return medicoRepository.save(medico);
     }
 
@@ -24,8 +28,11 @@ public class MedicoService {
     }
 
     public Medico buscarPorId(Long id) {
+        if (id == null) {
+            throw new IllegalArgumentException("ID não pode ser nulo");
+        }
         return medicoRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Médico não encontrado com ID: " + id));
+                .orElseThrow(() -> new EntidadeNaoEncontradaException("Médico não encontrado com ID: " + id));
     }
 }
 

@@ -9,6 +9,8 @@ import ListarAgendaveis from './components/ListarAgendaveis';
 import ConsultarHorarios from './components/ConsultarHorarios';
 import CriarAgendamento from './components/CriarAgendamento';
 import ListarAgendamentos from './components/ListarAgendamentos';
+import ListarPacientes from './components/ListarPacientes';
+import ListarMedicos from './components/ListarMedicos';
 
 function App() {
   const [activeView, setActiveView] = useState('dashboard');
@@ -18,19 +20,23 @@ function App() {
       case 'dashboard':
         return <Dashboard setActiveView={setActiveView} />;
       case 'cadastro-paciente':
-        return <CadastroPaciente />;
+        return <CadastroPaciente setActiveView={setActiveView} />;
       case 'cadastro-medico':
-        return <CadastroMedico />;
+        return <CadastroMedico setActiveView={setActiveView} />;
       case 'cadastro-exame':
-        return <CadastroExame />;
+        return <CadastroExame setActiveView={setActiveView} />;
       case 'listar-agendaveis':
-        return <ListarAgendaveis />;
+        return <ListarAgendaveis setActiveView={setActiveView} />;
       case 'consultar-horarios':
-        return <ConsultarHorarios />;
+        return <ConsultarHorarios setActiveView={setActiveView} />;
       case 'criar-agendamento':
-        return <CriarAgendamento />;
+        return <CriarAgendamento setActiveView={setActiveView} />;
       case 'listar-agendamentos':
-        return <ListarAgendamentos />;
+        return <ListarAgendamentos setActiveView={setActiveView} />;
+      case 'listar-pacientes':
+        return <ListarPacientes setActiveView={setActiveView} />;
+      case 'listar-medicos':
+        return <ListarMedicos setActiveView={setActiveView} />;
       default:
         return <Dashboard setActiveView={setActiveView} />;
     }

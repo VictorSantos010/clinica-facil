@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { agendamentosAPI } from '../services/api';
+import BackButton from './BackButton';
 import './List.css';
 
-const ListarAgendamentos = () => {
+const ListarAgendamentos = ({ setActiveView }) => {
   const [agendamentos, setAgendamentos] = useState([]);
   const [loading, setLoading] = useState(true);
   const [message, setMessage] = useState({ type: '', text: '' });
@@ -44,7 +45,11 @@ const ListarAgendamentos = () => {
 
   return (
     <div className="list-container">
+      <div className="list-header">
+        <BackButton onClick={() => setActiveView('dashboard')} label="Voltar ao Dashboard" />
+      </div>
       <h2 className="list-title">Agendamentos</h2>
+      <p className="list-subtitle">Visualize todos os agendamentos cadastrados</p>
       <button onClick={loadAgendamentos} className="refresh-btn">
         🔄 Atualizar
       </button>

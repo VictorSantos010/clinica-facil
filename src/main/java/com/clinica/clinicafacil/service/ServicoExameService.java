@@ -1,5 +1,6 @@
 package com.clinica.clinicafacil.service;
 
+import com.clinica.clinicafacil.exception.EntidadeNaoEncontradaException;
 import com.clinica.clinicafacil.model.ServicoExame;
 import com.clinica.clinicafacil.repository.ServicoExameRepository;
 import lombok.RequiredArgsConstructor;
@@ -16,6 +17,9 @@ public class ServicoExameService {
 
     @Transactional
     public ServicoExame criar(ServicoExame servicoExame) {
+        if (servicoExame == null) {
+            throw new IllegalArgumentException("Serviço de exame não pode ser nulo");
+        }
         return servicoExameRepository.save(servicoExame);
     }
 
@@ -24,8 +28,11 @@ public class ServicoExameService {
     }
 
     public ServicoExame buscarPorId(Long id) {
+        if (id == null) {
+            throw new IllegalArgumentException("ID não pode ser nulo");
+        }
         return servicoExameRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Serviço de exame não encontrado com ID: " + id));
+                .orElseThrow(() -> new EntidadeNaoEncontradaException("Serviço de exame não encontrado com ID: " + id));
     }
 }
 

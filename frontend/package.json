@@ -1,7 +1,7 @@
 {
   "name": "clinica-facil-frontend",
   "version": "1.0.0",
-  "description": "Frontend para o sistema ClínicaFácil",
+  "description": "Frontend para o sistema Clínica Fácil",
   "private": true,
   "dependencies": {
     "react": "^18.2.0",

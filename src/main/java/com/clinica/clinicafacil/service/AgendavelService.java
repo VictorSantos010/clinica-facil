@@ -1,5 +1,6 @@
 package com.clinica.clinicafacil.service;
 
+import com.clinica.clinicafacil.exception.EntidadeNaoEncontradaException;
 import com.clinica.clinicafacil.model.Agendavel;
 import com.clinica.clinicafacil.repository.AgendavelRepository;
 import lombok.RequiredArgsConstructor;
@@ -18,8 +19,11 @@ public class AgendavelService {
     }
 
     public Agendavel buscarPorId(Long id) {
+        if (id == null) {
+            throw new IllegalArgumentException("ID não pode ser nulo");
+        }
         return agendavelRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Agendável não encontrado com ID: " + id));
+                .orElseThrow(() -> new EntidadeNaoEncontradaException("Agendável não encontrado com ID: " + id));
     }
 }
 

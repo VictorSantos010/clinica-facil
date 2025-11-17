@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { agendamentosAPI, pacientesAPI, agendaveisAPI } from '../services/api';
+import BackButton from './BackButton';
 import './Form.css';
 
-const CriarAgendamento = () => {
+const CriarAgendamento = ({ setActiveView }) => {
   const [formData, setFormData] = useState({
     idPaciente: '',
     idAgendavel: '',
@@ -73,6 +74,9 @@ const CriarAgendamento = () => {
 
   return (
     <div className="form-container">
+      <div className="form-header">
+        <BackButton onClick={() => setActiveView('dashboard')} label="Voltar ao Dashboard" />
+      </div>
       <h2 className="form-title">Criar Agendamento</h2>
       <form onSubmit={handleSubmit} className="form">
         <div className="form-group">

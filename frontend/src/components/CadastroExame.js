@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { examesAPI } from '../services/api';
+import BackButton from './BackButton';
 import './Form.css';
 
-const CadastroExame = () => {
+const CadastroExame = ({ setActiveView }) => {
   const [formData, setFormData] = useState({
     nome: '',
     nomeExame: '',
@@ -47,6 +48,9 @@ const CadastroExame = () => {
 
   return (
     <div className="form-container">
+      <div className="form-header">
+        <BackButton onClick={() => setActiveView('dashboard')} label="Voltar ao Dashboard" />
+      </div>
       <h2 className="form-title">Cadastrar Serviço de Exame</h2>
       <form onSubmit={handleSubmit} className="form">
         <div className="form-group">

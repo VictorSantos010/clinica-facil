@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { pacientesAPI } from '../services/api';
+import BackButton from './BackButton';
 import './Form.css';
 
-const CadastroPaciente = () => {
+const CadastroPaciente = ({ setActiveView }) => {
   const [formData, setFormData] = useState({
     nome: '',
     cpf: '',
@@ -40,6 +41,9 @@ const CadastroPaciente = () => {
 
   return (
     <div className="form-container">
+      <div className="form-header">
+        <BackButton onClick={() => setActiveView('dashboard')} label="Voltar ao Dashboard" />
+      </div>
       <h2 className="form-title">Cadastrar Paciente</h2>
       <form onSubmit={handleSubmit} className="form">
         <div className="form-group">

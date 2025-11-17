@@ -1,6 +1,7 @@
 package com.clinica.clinicafacil.controller;
 
 import com.clinica.clinicafacil.dto.AgendamentoRequestDTO;
+import com.clinica.clinicafacil.exception.HorarioIndisponivelException;
 import com.clinica.clinicafacil.model.Agendamento;
 import com.clinica.clinicafacil.service.AgendamentoService;
 import jakarta.validation.Valid;
@@ -23,7 +24,7 @@ public class AgendamentoController {
         try {
             Agendamento agendamento = agendamentoService.criar(dto);
             return ResponseEntity.status(HttpStatus.CREATED).body(agendamento);
-        } catch (RuntimeException e) {
+        } catch (HorarioIndisponivelException | IllegalArgumentException e) {
             return ResponseEntity.badRequest().build();
         }
     }

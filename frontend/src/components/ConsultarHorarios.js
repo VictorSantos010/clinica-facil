@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { agendaveisAPI } from '../services/api';
+import BackButton from './BackButton';
 import './List.css';
 
-const ConsultarHorarios = () => {
+const ConsultarHorarios = ({ setActiveView }) => {
   const [agendaveis, setAgendaveis] = useState([]);
   const [selectedId, setSelectedId] = useState('');
   const [dia, setDia] = useState('');
@@ -43,6 +44,9 @@ const ConsultarHorarios = () => {
 
   return (
     <div className="list-container">
+      <div className="list-header">
+        <BackButton onClick={() => setActiveView('dashboard')} label="Voltar ao Dashboard" />
+      </div>
       <h2 className="list-title">Consultar Horários Disponíveis</h2>
 
       <div className="form-container" style={{ maxWidth: '600px', marginBottom: '2rem' }}>

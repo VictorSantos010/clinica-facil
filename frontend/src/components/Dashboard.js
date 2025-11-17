@@ -45,11 +45,25 @@ const Dashboard = ({ setActiveView }) => {
       action: () => setActiveView('consultar-horarios'),
       color: '#fa709a',
     },
+    {
+      title: 'Ver Pacientes',
+      description: 'Visualize todos os pacientes cadastrados',
+      icon: '👥',
+      action: () => setActiveView('listar-pacientes'),
+      color: '#667eea',
+    },
+    {
+      title: 'Ver Médicos',
+      description: 'Visualize todos os médicos cadastrados',
+      icon: '👨‍⚕️',
+      action: () => setActiveView('listar-medicos'),
+      color: '#764ba2',
+    },
   ];
 
   return (
     <div className="dashboard">
-      <h2 className="dashboard-title">Dashboard - ClínicaFácil</h2>
+      <h2 className="dashboard-title">Dashboard - Clínica Fácil</h2>
       <p className="dashboard-subtitle">Gerencie agendamentos de forma fácil e rápida</p>
       
       <div className="cards-grid">
