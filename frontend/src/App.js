@@ -19,7 +19,15 @@ import ListarPacientes from './components/ListarPacientes';
 import ListarMedicos from './components/ListarMedicos';
 
 function App() {
-  const [activeView, setActiveView] = useState('home');
+  // Inicializar activeView baseado na URL
+  const getInitialView = () => {
+    if (window.location.pathname === '/admin') {
+      return 'dashboard';
+    }
+    return 'home';
+  };
+
+  const [activeView, setActiveView] = useState(getInitialView());
   const { isAuthenticated, isAdmin } = useAuth();
 
   // Rotas que requerem autenticação
@@ -35,6 +43,7 @@ function App() {
     'listar-pacientes',
     'listar-medicos',
   ];
+
 
   // Verificar se a rota atual requer autenticação
   const requiresAuth = adminRoutes.includes(activeView);
@@ -57,8 +66,9 @@ function App() {
   }, [isAuthenticated, isAdmin, activeView]);
 
   // Detectar se está tentando acessar área admin
-  // Se estiver na home, sempre mostrar HomePage, mesmo se for admin
-  const isAdminRoute = (window.location.pathname === '/admin' || requiresAuth) && activeView !== 'home';
+  // Se activeView for 'home', sempre mostrar HomePage
+  // Caso contrário, se a URL for /admin OU se activeView for uma rota admin, mostrar área admin
+  const isAdminRoute = activeView !== 'home' && (window.location.pathname === '/admin' || requiresAuth);
 
   // Renderizar área pública (Home)
   if (!isAdminRoute) {

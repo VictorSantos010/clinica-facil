@@ -41,7 +41,10 @@ const AdminHeader = ({ activeView, setActiveView }) => {
         <div className="admin-header-right">
           <button
             className="admin-header-home-btn"
-            onClick={() => setActiveView('home')}
+            onClick={() => {
+              setActiveView('home');
+              window.history.pushState({}, '', '/');
+            }}
             title="Voltar para Home"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
