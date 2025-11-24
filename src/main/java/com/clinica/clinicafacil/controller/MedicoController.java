@@ -32,5 +32,17 @@ public class MedicoController {
     public ResponseEntity<Medico> buscarPorId(@PathVariable Long id) {
         return ResponseEntity.ok(medicoService.buscarPorId(id));
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Medico> atualizar(@PathVariable Long id, @Valid @RequestBody Medico medico) {
+        Medico medicoAtualizado = medicoService.atualizar(id, medico);
+        return ResponseEntity.ok(medicoAtualizado);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletar(@PathVariable Long id) {
+        medicoService.deletar(id);
+        return ResponseEntity.noContent().build();
+    }
 }
 

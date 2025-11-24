@@ -19,7 +19,7 @@ SELECT * FROM pacientes;
 
 ### Ver todos os médicos:
 ```sql
-SELECT * FROM medicos;
+
 ```
 
 ### Ver todos os agendamentos:

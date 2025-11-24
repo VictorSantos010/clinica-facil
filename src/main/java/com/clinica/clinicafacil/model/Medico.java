@@ -25,6 +25,10 @@ public class Medico extends Agendavel {
     @Column(nullable = false)
     private String especialidade;
 
+    @Size(max = 1000000)
+    @Column(name = "foto_url", columnDefinition = "TEXT")
+    private String fotoUrl;
+
     // Construtor para facilitar criação
     public Medico(String nome, String crm, String especialidade, java.time.LocalTime horarioInicio, java.time.LocalTime horarioFim) {
         super();

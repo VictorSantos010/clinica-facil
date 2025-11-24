@@ -5,7 +5,7 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+  border-bottom: 1px solid rgba(61, 142, 255, 0.1);
 }
 
 .header-content {
@@ -31,13 +31,13 @@
 
 .logo-container:hover {
   transform: translateY(-2px);
-  background: rgba(102, 126, 234, 0.05);
+  background: rgba(61, 142, 255, 0.05);
 }
 
 .logo-icon {
   font-size: 2rem;
   animation: pulse 2s ease-in-out infinite;
-  filter: drop-shadow(0 2px 4px rgba(102, 126, 234, 0.3));
+  filter: drop-shadow(0 2px 4px rgba(61, 142, 255, 0.3));
 }
 
 @keyframes pulse {
@@ -58,7 +58,7 @@
 .logo-main {
   font-size: 1.75rem;
   font-weight: 700;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #3d8eff 0%, #1e6fd8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -68,7 +68,7 @@
 .logo-sub {
   font-size: 1.25rem;
   font-weight: 500;
-  color: #764ba2;
+  color: #1e6fd8;
   letter-spacing: 1px;
   opacity: 0.9;
 }
@@ -109,17 +109,90 @@
 }
 
 .nav-btn:hover {
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
-  color: #667eea;
+  background: linear-gradient(135deg, rgba(61, 142, 255, 0.1) 0%, rgba(30, 111, 216, 0.1) 100%);
+  color: #3d8eff;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+  box-shadow: 0 4px 12px rgba(61, 142, 255, 0.15);
 }
 
 .nav-btn.active {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #3d8eff 0%, #1e6fd8 100%);
   color: white;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 4px 15px rgba(61, 142, 255, 0.4);
   transform: translateY(-1px);
+}
+
+/* Bot�o de login (�rea p�blica) */
+.login-btn-header {
+  background: linear-gradient(135deg, #3d8eff 0%, #1e6fd8 100%) !important;
+  color: white !important;
+  font-weight: 700;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.login-btn-header:hover {
+  box-shadow: 0 4px 20px rgba(61, 142, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Bot�o de acesso administrativo (�rea p�blica) */
+.admin-access-btn {
+  background: linear-gradient(135deg, #7ab8ff 0%, #0ea5e9 100%) !important;
+  color: white !important;
+  font-weight: 700;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.admin-access-btn:hover {
+  background: linear-gradient(135deg, #e082eb 0%, #e4465b 100%) !important;
+  box-shadow: 0 4px 20px rgba(245, 87, 108, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Bot�o de voltar para Home (�rea administrativa) */
+.back-home-btn {
+  background: rgba(61, 142, 255, 0.1) !important;
+  color: #3d8eff !important;
+  border: 2px solid rgba(61, 142, 255, 0.3);
+  font-weight: 600;
+}
+
+.back-home-btn:hover {
+  background: rgba(61, 142, 255, 0.2) !important;
+  border-color: #3d8eff;
+  color: #5568d3 !important;
+}
+
+/* Informa��es do usu�rio */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-left: 0.5rem;
+  padding-left: 0.75rem;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.user-name {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.logout-btn {
+  background: rgba(220, 53, 69, 0.1) !important;
+  color: #dc3545 !important;
+  border: 2px solid rgba(220, 53, 69, 0.3);
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+}
+
+.logout-btn:hover {
+  background: rgba(220, 53, 69, 0.2) !important;
+  border-color: #dc3545;
+  color: #c82333 !important;
 }
 
 @media (max-width: 768px) {

@@ -21,6 +21,8 @@ export const medicosAPI = {
   criar: (medico) => api.post('/medicos', medico),
   listar: () => api.get('/medicos'),
   buscarPorId: (id) => api.get(`/medicos/${id}`),
+  atualizar: (id, medico) => api.put(`/medicos/${id}`, medico),
+  deletar: (id) => api.delete(`/medicos/${id}`),
 };
 
 // Exames
